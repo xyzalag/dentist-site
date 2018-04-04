@@ -1,0 +1,74 @@
+.form {
+  font-family: 'Abel', cursive;
+  margin: 0 auto;
+
+  &--pl {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+  }
+
+  &__title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #fff;
+  }
+
+  &__input {
+    font-family: 'Oswald', sans-serif;
+    display: block;
+    margin: auto;
+    margin-top: 24px;
+    padding: 10px 10px;
+    width: 300px;
+    color:  #000;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid $mainWhite;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+
+    @mixin atSmall {
+      padding: 10px 16px;
+    }
+
+    &:focus {
+      outline: none;
+      border: 3px solid #fff;
+    }
+
+    &--textarea {
+      min-height: 100px;
+    }
+  }
+
+  &__button {
+    font-family: 'Oswald', sans-serif;
+    display: block;
+    margin: auto;
+    margin-top: 24px;
+    padding: 12px 16px;
+    width: 250px;
+    color:  #000;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid $mainWhite;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      transform: scale(0.95);
+      color: $neonGreen;
+      background-color: $mainGreen;
+      border: 1px solid $mainWhite;
+    }
+  }
+}
+
+label{
+  display: none;
+}

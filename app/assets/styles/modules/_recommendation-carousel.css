@@ -1,0 +1,39 @@
+.recommendation-carousel {
+	.owl-nav{
+		text-align: center;
+
+		button.owl-prev {
+			margin-right: 10px;
+			font-size: 25px;
+			color: $darkGreen;
+		}
+		button.owl-next {
+			margin-left: 10px;
+			font-size: 25px;
+			color: $darkGreen;
+		}
+	}
+
+
+	&__item {
+		width: 70%;
+		border: .5px solid $mainGreen;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		text-align: center;
+		padding: 5px 20px 20px 20px;
+	}
+
+	&__quote{
+		text-align: center;
+		font-weight: 400;
+		line-height: 1.5;
+		color: $darkestGreen;
+	}
+
+	&__source {
+		text-align: center;
+		text-transform: uppercase;
+	}
+}

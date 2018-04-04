@@ -1,0 +1,50 @@
+.page-section {
+  /*position: relative;*/
+  padding: 10px;
+  width: 100vw;
+
+  @mixin atMedium {
+    padding: 64px;
+  }
+
+  &--light-blue {
+    background-color: $lightBlue;
+  }
+
+  &--dark-blue {
+    background-color: $darkBlue;
+  }
+
+  &--black {
+    background-color: #000;
+  }
+
+  &__title{
+    margin-top: 0;
+    margin-bottom: 15px;
+    color:  $mainWhite;
+    font-family: 'Abel', sans-serif;
+    font-weight: lighter;
+    font-size: 40px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    cursor: default;
+
+    @mixin atSmall {
+      font-size: 67px;
+      margin-bottom: 32px;
+    }
+
+    &--commerce {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    &--contact {
+
+      @mixin atSmall {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+}

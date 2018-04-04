@@ -1,0 +1,42 @@
+.feature-item {
+
+  position: relative;
+  padding-bottom: 2.5rem;
+  border: 2px solid #FFF;
+  background-color: $lightGreen;
+
+
+    @mixin atSmall {
+      padding: 5px 20px;
+      margin-bottom: 45px;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-top: .7em;
+    margin-bottom: .8rem;
+    text-align: center;
+    color: $vibrantBurgundy;
+
+    @mixin atSmall {
+      margin-top: 1em;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: center;
+    color: #000;
+  }
+}

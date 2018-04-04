@@ -1,0 +1,131 @@
+.page-film {
+
+    &__video-container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+
+      @mixin atLarge {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+
+    &__vimeo {
+      width: 95vw;
+      height: 300px;
+
+      @mixin atMedium {
+        width: 70vw;
+        height: 550px;
+      }
+    }
+
+
+  &__item {
+    text-align: center;
+
+    &--bg {
+      @mixin atMedium {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &--simia {
+          background-image: url('../../assets/images/simia-poster.jpg');
+        }
+
+        &--void {
+        }
+      }
+    }
+
+    > a {
+      outline:none;
+      color: #000;
+    }
+  }
+
+  &__gallery {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @mixin atLarge {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+
+  &__gallery-item {
+    width: 220px;
+    height: 120px;
+    margin-bottom: 10px;
+    transition: all 0.25s ease-out;
+    border: none;
+
+    &:hover {
+      opacity: 0.4;
+      transform: scale(0.9);
+    }
+
+    @mixin atSmall {
+      width: 250px;
+      height: 150px;
+      margin-right: 10px;
+    }
+
+    @mixin atMedium {
+      margin-right: 15px;
+      width: 300px;
+      height: 200px;
+    }
+
+    @mixin atLarge {
+      margin-bottom: 60px;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+  }
+
+  &__description {
+    font-size: 17px;
+    color: $mainWhite;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+    padding: 10px 10px;
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+
+    @mixin atSmall {
+      width: 100%;
+      margin: 20px auto;
+      padding: 10px 20px;
+    }
+
+    @mixin atMedium {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      font-size: 20px;
+      width: 90%;
+      margin: 40px auto;
+      padding: 10px 30px;
+    }
+
+    @mixin atLarge {
+      width: 80%;
+      margin: 60px auto;
+      padding: 40px 60px;
+    }
+
+    &--simia {
+
+      @mixin atMedium {
+        font-size: 22px;
+      }
+    }
+  }
+}

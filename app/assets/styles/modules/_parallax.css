@@ -1,0 +1,25 @@
+.parallax {
+
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--hero {
+      height: 100vh;
+    	background-image: url('../../assets/images/bg-light-dots.jpg');
+
+    }
+
+    &--recommendations {
+      height: auto;
+      background-image: url('../../assets/images/recommendations-bg-dots-white.jpg');
+    }
+
+    &--contact {
+      height: auto;
+      background-image: url('../../assets/images/contact-bg-dots.jpg');
+    }
+}

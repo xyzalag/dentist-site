@@ -1,0 +1,14 @@
+.scroll {
+  position:fixed;
+  right:10px;
+  bottom:10px;
+  cursor:pointer;
+  display:none;
+  color: $mainGreen;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    color: neonGreen;
+  }
+}

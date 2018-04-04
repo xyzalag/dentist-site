@@ -1,0 +1,147 @@
+
+.landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  top:0;
+
+  &--half-height {
+    height: 60vh;
+  }
+
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &__bg {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -5;
+    background-image: url('../../assets/images/hero.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &--simia-description {
+      background-image: url('../../assets/images/simia-poster.jpg');
+    }
+
+    &--parallax {
+      height: 75vh;
+      position: fixed;
+      background-position: center;
+      background-attachment: scroll;
+
+      @mixin atMedium{
+        height: 60vh;
+        background-attachment: fixed;
+      }
+
+      &--music {
+        background-image: url('../../assets/images/music-parallax.jpg');
+      }
+      &--film-void {
+        background-image: url('../../assets/images/film-parallax.jpg');
+      }
+      &--film-simia {
+        background-image: url('../../assets/images/simia-parallax.jpg');
+      }
+    }
+  }
+
+  &__title__container {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+
+  &__title {
+    margin-top: 0px;
+    padding: 15px 20px 15px 20px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    cursor: default;
+    letter-spacing: 1px;
+
+    @mixin atMedium {
+      font-size: 80px;
+    }
+
+    &--half-height {
+      background: none;
+      color: #fff;
+      margin-top: 20px;
+    }
+  }
+
+  &__subtitle{
+    margin-top: -50px;
+    margin-bottom: 0px;
+    padding: 2px 5px 2px 5px;
+    color: #fff;
+    font-family: 'Unica One', cursive;
+    font-weight: 200;
+    font-size: 29px;
+    text-align: center;
+    cursor: default;
+    letter-spacing: 0px;
+  }
+
+  &__button__container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__button {
+    display: none;
+
+    @mixin atLarge {
+      display: inline;
+      margin: 30px 40px 50px 40px;
+      padding: 15px;
+      border: 2px solid #ffffff;
+      background-color: #2F1314;
+      background: rgb(25, 25, 25);
+      background: rgba(25, 25, 25, .5);
+      color: #CDCDCD;
+      text-align: center;
+      font-family: 'Abel', sans-serif;
+      font-size: 20px;
+      font-weight: 100;
+      text-decoration: none;
+      letter-spacing: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease-out;
+
+      &--pl {
+        font-family: 'Economica', sans-serif;
+        font-size: 22px;
+      }
+
+      &:hover {
+        background-color: #435658;
+        padding: 20px;
+        border: 1px solid #ffffff;
+        font-size: 25px;
+      }
+    }
+  }
+}
