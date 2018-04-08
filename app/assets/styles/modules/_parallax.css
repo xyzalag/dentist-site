@@ -18,8 +18,8 @@
       background-image: url('../../assets/images/recommendations-bg-dots-white.jpg');
     }
 
-    &--contact {
+    &--clinic {
       height: auto;
-      background-image: url('../../assets/images/contact-bg-dots.jpg');
+      background-image: url('../../assets/images/clinic-bg.jpg');
     }
 }

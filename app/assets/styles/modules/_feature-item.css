@@ -1,13 +1,13 @@
 .feature-item {
 
   position: relative;
-  padding-bottom: 2.5rem;
   border: 2px solid #FFF;
   background-color: $lightGreen;
+  margin-bottom: 10px;
 
 
     @mixin atSmall {
-      padding: 5px 20px;
+      padding: 5px 30px;
       margin-bottom: 45px;
   }
 
@@ -20,12 +20,12 @@
 
 
   &__title {
-    font-size: 1.6rem;
-    font-weight: 300;
+    font-size: 1.3rem;
+    font-weight: 400;
     margin-top: .7em;
     margin-bottom: .8rem;
     text-align: center;
-    color: $vibrantBurgundy;
+    color: #FFF;
 
     @mixin atSmall {
       margin-top: 1em;
@@ -34,9 +34,13 @@
   }
 
   &__description {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.65;
     text-align: center;
     color: #000;
+
+    @mixin atSmall {
+      font-size: 15px;
+    }
   }
 }

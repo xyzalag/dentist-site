@@ -1,0 +1,26 @@
+.clinic {
+
+	&__content {
+		display:flex;
+		justify-content:center;
+		align-items:flex-end;
+		height: 500px;
+	}
+
+	&__headline {
+		font-family: $fontHeading;
+		font-size: 18px;
+		text-align: center;
+		font-weight: 600;
+		color: #FFF;
+		background-color: rgba($darkestGreen, .7);
+		padding: 10px;
+		letter-spacing: 5px;
+
+
+		@mixin atSmall{
+			font-size: 30px;
+		}
+	}
+
+}

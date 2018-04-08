@@ -2,78 +2,42 @@
 
 	#googleMap {
 		width: 100%;
-        height: 350px;
-        background-color: $lightGreen;
+        border: 18px solid rgba($darkGreen, .7);
+        height: 300px;
+
+        @mixin atMedium {
+        	height: auto;
+        }
 	}
-
-	&__parallax-title-container {
-		position: relative;
-	}
-
-	&__parallax-title {
-	    position: absolute;
-  		left: 50%;
-  		top: 50%;
-  		transform: translate(-50%, -50%);
-	    text-align: center;
-	    width: 50%;
-
-    	@mixin atMedium {
-      		padding-top: 60px;
-    	}
- 	 }
 
  	&__info-container {
  		display: block;
  		margin: 0 auto;
- 		position: relative;
- 		transform: translate(7%, 8%);
  		text-align: center;
- 		background-color: $darkGreen;
+ 		background-color: rgba($darkGreen, .7);
  		padding: 10px;
  		font-weight: 300;
  		font-family: $fontHeading;
- 		border: 1px solid $lightGreen;
  		color: #FFF;
  	}
 
- 	&__title {
- 		text-transform: uppercase;
- 	}
-
- 	&__form-headline{
- 		text-align: center;
- 		margin-top: 40px;
- 	}
-
- 	&__img {
- 		text-align: left;
- 	}
-
  	&__social {
- 		@mixin centerer;
+ 		display: block;
+ 		margin: 0 auto;
  	}
 
  	&__btn-social {
  		display: block;
+ 		margin: 0 auto;
  		background-color: transparent;
- 		border: 1px solid $mainBurgundy;
- 		padding: .75rem 1.2rem;
- 		width: 200px;
+ 		border: 2px solid #FFF;
+ 		padding: 1.25rem;
+ 		width: 100%;
  		margin-top: 20px;
- 		cursor: pointer;
  		outline: none;
- 		transition: all 0.3s ease;
 
- 		&:hover {
- 		color: #FFF;
- 		background-color: $mainBurgundy;
- 		}
-
- 		&--tel {
- 			background-color: $mainBurgundy;
- 			color: #FFF;
- 			cursor: default;
+ 		@mixin atSmall{
+ 			width: 320px;
  		}
  	}
 

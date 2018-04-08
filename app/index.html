@@ -19,6 +19,15 @@
   <!-- endbuild -->
 </head>
 <body>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
   <header class="site-header">
     <div class="wrapper">
       <div class="site-header__logo">
@@ -32,13 +41,13 @@
 
       <div class="site-header__menu-content">
         <div class="site-header__btn-container">
-          <a href="#" class="btn btn--burgundy open-modal">Tel. 781 315 777</a>
+          <a class="btn btn--burgundy ">Tel. 781 315 777</a>
         </div>
         <nav class="primary-nav primary-nav--pull-right">
           <ul>
             <li><a href="#about" id="about-link">O Mnie</a></li>
             <li><a href="#features" id="features-link">Usługi</a></li>
-            <li><a href="#contact" id="testimonials-link">Kontakt</a></li>
+            <li><a href="#contact" id="contact-link">Kontakt</a></li>
           </ul>
         </nav>
       </div>
@@ -60,8 +69,9 @@
           <div class="wrapper">
             <h1 class="large-hero__title">Regina Gromadzka</h1>
             <h2 class="large-hero__subtitle">stomatologia</h2>
-            <p class="large-hero__description">W trosce o Twój zdrowy uśmiech :) ! </p>
-            <p><a href="#" class="btn btn--burgundy btn--large btn--hero open-modal">Zarejestruj się!</a></p>
+            <p class="large-hero__description">Piękne zęby to nasza specjalność ! </p>
+            <!-- <p><a href="#" class="btn btn--burgundy btn--large btn--hero open-modal">Zarejestruj się!</a></p> -->
+            <p><a href="#contact" class="btn btn--burgundy btn--large btn--hero">Zarejestruj się!</a></p>
           </div>
         </div>
       </div>
@@ -77,8 +87,8 @@
             <h1 class="about__title">Regina Gromadzka</h1>
             <h2 class="about__subtitle">lekarz dentysta</h2>
           </div>
-        <p class="about__description">Lek. dent. Regina Gromadzka jest absolwentką Śląskiej Akademii Medycznej w Katowicach. Głównym obszarem jej   zainteresowań jest stomatologia zachowawcza oraz endodoncja mikroskopowa i protetyka. Swoje wieloletnie doświadczenie zawodowe zdobyła m.in. prowadząc prywatną praktykę stomatologiczną.<br>
-        Specjalistka doskonale zdaje sobie sprawę z potrzeby nieustannego aktualizowania wiedzy i umiejętności.<br></p>
+        <p class="about__description">Lek. dent. Regina Gromadzka jest absolwentką Śląskiej Akademii Medycznej w Katowicach. Głównym obszarem jej   zainteresowań jest stomatologia zachowawcza oraz endodoncja mikroskopowa i protetyka. Specjalistka doskonale zdaje sobie sprawę z potrzeby nieustannego aktualizowania wiedzy i umiejętności. <br>
+        Swoje wieloletnie doświadczenie zawodowe zdobyła m.in. prowadząc prywatną praktykę stomatologiczną.</p>
         <button id="read-more-button" class="read-more-button btn btn--small">Więcej...</button>
         <div id="read-more-content" class="read-more-content">
             <p class="about__description">Lekarz Regina Gromadzka posiada wiele certyfikatów potwierdzających jej kompetencje i wiedzę praktyczną. Wśród licznych kursów i szkoleń, w których uczestniczyła, można wymienić m.in. kursy: Ochrona radiologiczna pacjenta, Specjalistyczne leczenie protetyczne pacjentów z rozpoznanym starciem patologicznym, Protetyka: korony i mosty, Leczenie protetyczne zaburzeń okluzyjnych i czynnościowych układu stomatognatycznego, Maszynowe opracowanie kanałów korzeniowych oraz termiczne metody wypełniania, a także szkolenia: Współczesne możliwości i metody leczenia endodontycznego, Odbudowa zęba po leczeniu endodontycznym czy Mikroskop w stomatologii. </p>
@@ -115,7 +125,7 @@
     <div class="wrapper">
       <h2 class="section-title">Usługi Stomatologiczne</h2>
 
-      <div class="row row--gutters-small row--equal-height-at-large">
+      <div class="row row--gutters-small row--equal-height-at-medium">
         <div class="row__medium-6">
           <div class="feature-item">
             <h3 class="feature-item__title">Diagnostyka</h3>
@@ -136,7 +146,7 @@
       </div>
 
 
-      <div class="row row--gutters-small row--equal-height-at-large">
+      <div class="row row--gutters-small row--equal-height-at-medium">
         <div class="row__medium-6">
            <div class="feature-item">
             <h3 class="feature-item__title">Protetyka</h3>
@@ -159,16 +169,23 @@
     </div>
   </div>
 
+  <div class="parallax parallax--clinic">
+    <div class="page-section lazyload clinic">
+      <div class="clinic__content">
+        <h1 class="clinic__headline">PROJEKT NASZEJ NOWEJ KLINIKI STOMATOLOGICZNEJ!</h1>
+      </div>
+    </div>
+  </div>
 
-  <div id="contact" class="page-section page-section--no-b-padding-until-large lazyload contact" data-matching-link="#contact-link">
+  <div id="contact" class="page-section page-section--no-b-padding-until-large lazyload contact page-section--contact" data-matching-link="#contact-link">
     <div class="wrapper wrapper--no-padding-until-large">
       <h2 class="section-title section-title--dark">Kontakt</h2>
 
-      <div class="row generic-content-container row--equal-height-at-large">
+      <div class="row generic-content-container row--equal-height-at-medium ">
 
-        <div class="row__medium-4 row__medium-4--larger">
+        <div class="row row__medium-4">
           <div class="contact__info-container">
-            <h2 class="contact__title">Gabinet Stomatologiczny Oświęcim</h2>
+            <h1 class="contact__title">Gabinet Stomatologiczny Oświęcim</h1>
             <h3>lek. dent. Regina Gromadzka</h3>
             <h2>
             <adress>ul. Zagrodowa 31 / 1 <br> 32-600 Oświęcim </adress>
@@ -177,14 +194,13 @@
           </div>
         </div>
 
-      <div class="row__medium-8 row__medium-8--smaller ">
+      <div class="row row__medium-8">
         <div id="googleMap"></div>
         </div>
       </div>
-<div class="parallax parallax--contact">
-      <div class="row row--t-padding row--equal-height-at-large">
-      <div class="row__medium-8 form__bg">
-        <div class="row__medium-8">
+      <div class="row row--t-padding">
+      <div class="row form__bg row--gutters">
+        <div class="row__medium-8 row__medium-8--smaller">
                 <div class="form">
                   <form action="contact-form.php" method="POST">
                     <h3 class="form__title">Masz Pytanie? <br>Skontaktuj się z nami!</h3>
@@ -198,18 +214,16 @@
                   </form>
                </div>
               </div>
-              <div class="container">
-              <div class="row__medium-4 contact__social">
-                <a href="https://www.facebook.com/StomatologiaReginaGromadzka/"><button class="contact__btn-social">ODWIEDŹ NAS NA FACEBOOKU</button></a>
-                <button class="contact__btn-social contact__btn-social--tel ">ZADZWOŃ:<br> Tel. 781 315 777</button>
-                <a href="znanylekarz.pl/regina-gromadzka/stomatolog/oswiecim"><button class="contact__btn-social">ZOBACZ PROFIL NA <br> ZNANY LEKARZ</button></a>
+              <div class="row__medium-4 row__medium-4--larger contact__social">
+                <button class="contact__btn-social"><a id="zl-url" class="zl-url" href="https://www.znanylekarz.pl/regina-gromadzka/stomatolog/oswiecim" rel="nofollow" data-zlw-doctor="regina-gromadzka" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Regina Gromadzka - ZnanyLekarz.pl</a></button>
+                <button class="contact__btn-social"><div class="fb-page" data-href="https://www.facebook.com/StomatologiaReginaGromadzka/" data-tabs="false" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/StomatologiaReginaGromadzka/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StomatologiaReginaGromadzka/">Stomatologia Regina Gromadzka</a></blockquote></div></button>
               </div>
-            </div>
         </div>
-      </div>
     </div>
     </div>
   </div>
+
+
 
   <footer class="site-footer">
     <div class="wrapper">
@@ -219,34 +233,48 @@
 
   <div class="modal">
     <div class="modal__inner">
-       <div class="row row--t-padding row--equal-height-at-large">
-      <div class="row__medium-8 form__bg">
-        <div class="row__medium-8">
+      <div class="row">
+        <div class="row form__bg row--gutters">
+          <div class="row__medium-8 row__medium-8--smaller">
                 <div class="form">
                   <form action="contact-form.php" method="POST">
                     <h3 class="form__title">Masz Pytanie? <br>Skontaktuj się z nami!</h3>
                     <label for="name">Imię </label>
                     <input class="form__input" id="name" type="text" name="name" placeholder="Imię i Nazwisko..." required/>
                     <label for="email">Telefon</label>
-                    <input class="form__input" id="email" type="tel" placeholder="Telefon..." required/>
+                    <input class="form__input" id="email" type="tel" name="email" placeholder="Telefon..." required/>
                     <label for="message">Wiadomość</label>
                     <textarea class="form__input form__input--textarea" id="message" name="message" placeholder="W czym możemy Ci pomóc?" required></textarea>
                     <button class="form__button" type="submit">Wyślij</button>
                   </form>
                </div>
               </div>
-              <div class="container">
-              <div class="row__medium-4 contact__social">
-                <a href="https://www.facebook.com/StomatologiaReginaGromadzka/"><button class="contact__btn-social">ODWIEDŹ NAS NA FACEBOOKU</button></a>
-                <button class="contact__btn-social contact__btn-social--tel ">ZADZWOŃ:<br> Tel. 781 315 777</button>
-                <a href="znanylekarz.pl/regina-gromadzka/stomatolog/oswiecim"><button class="contact__btn-social">ZOBACZ - <br> ZNANY LEKARZ</button></a>
+              <div class="row__medium-4 row__medium-4--larger contact__social">
+                <button class="contact__btn-social"><a id="zl-url" class="zl-url" href="https://www.znanylekarz.pl/regina-gromadzka/stomatolog/oswiecim" rel="nofollow" data-zlw-doctor="regina-gromadzka" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Regina Gromadzka - ZnanyLekarz.pl</a></button>
+                <button class="contact__btn-social"><div class="fb-page" data-href="https://www.facebook.com/StomatologiaReginaGromadzka/" data-tabs="false" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/StomatologiaReginaGromadzka/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/StomatologiaReginaGromadzka/">Stomatologia Regina Gromadzka</a></blockquote></div></button>
               </div>
-            </div>
         </div>
-      </div>
+    </div>
     </div>
     <div class="modal__close">X</div>
   </div>
+
+  <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script>
+      function initMap() {
+        var uj = {lat:50.024763, lng: 19.224779};
+        var map = new google.maps.Map(document.getElementById('googleMap'), {
+          zoom: 4,
+          center: uj
+        });
+        var marker = new google.maps.Marker({
+          position: uj,
+          map: map
+        });
+      }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk&callback=initMap"></script>
+
   <!-- build:js assets/scripts/App.js -->
   <script src="/temp/scripts/App.js"></script>
   <!-- endbuild -->

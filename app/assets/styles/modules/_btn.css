@@ -26,6 +26,11 @@
 
   &--hero {
     transition: all 0.3s ease;
+    display: none;
+
+    @mixin atLarge {
+      display: inline-block;
+    }
 
     &:hover{
       background-color: $mainGreen;

@@ -16,20 +16,30 @@
 
 
 	&__item {
-		width: 70%;
+		width: 90%;
 		border: .5px solid $mainGreen;
 		display: block;
 		margin: 0 auto;
 		margin-bottom: 20px;
 		text-align: center;
 		padding: 5px 20px 20px 20px;
+
+		@mixin atSmall {
+			width: 70%;
+		}
 	}
 
 	&__quote{
 		text-align: center;
 		font-weight: 400;
-		line-height: 1.5;
 		color: $darkestGreen;
+		font-size: 18px;
+		line-height: 1.2;
+
+		@mixin atSmall {
+			font-size: 1.5em;
+			line-height: 1.5;
+		}
 	}
 
 	&__source {

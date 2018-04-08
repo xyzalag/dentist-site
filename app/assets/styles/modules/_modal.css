@@ -10,6 +10,7 @@
   visibility: hidden;
   transform: scale(1.2);
   transition: all .3s ease-out;
+  overflow-x: scroll;
 
   &--is-visible {
     opacity: 1;
@@ -22,6 +23,7 @@
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+
   }
 
   &__description {
@@ -38,11 +40,11 @@
     font-size: 2rem;
     transform: scaleX(1.2);
     transform-origin: 100% 0;
-    color: $mainBlue;
+    color: $darkestGreen;
     cursor: pointer;
 
     &:hover {
-      color:$mainOrange;
+      color:$vibrantBurgundy;
     }
   }
 

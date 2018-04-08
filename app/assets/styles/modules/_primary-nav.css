@@ -36,15 +36,16 @@
   }
 
   a {
-    color: $darkestGreen;
+    color: #FFF;
     font-weight: 300;
     text-decoration: none;
     display: block;
     padding: 5px 8px;
     font-size: .8rem;
-    background-color: rgba($lightGreen, .5);
+    background-color: $darkGreen;
 
     @mixin atMedium {
+      color: $darkestGreen;
       font-size: 1rem;
       padding: 12px 0;
       background-color: transparent;

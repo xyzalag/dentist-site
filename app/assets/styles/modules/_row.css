@@ -2,6 +2,7 @@
 
   @mixin clearfix;
 
+
   &--t-padding {
     padding-top: 80px;
   }
@@ -19,7 +20,11 @@
   }
 
   &--gutters > div {
-    padding-right: 65px;
+    padding-right: 0;
+
+    @mixin atMedium{
+      padding-right: 65px;
+    }
   }
 
   &--gutters-large > div {
