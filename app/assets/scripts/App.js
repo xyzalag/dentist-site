@@ -12,6 +12,19 @@ var stickyHeader = new StickyHeader();
 var modal = new Modal();
 
 
+//IE FIX FOR SHAKY BACKGROUND - PARALLAX
+if(navigator.userAgent.match(/Trident\/7\./)) { // if IE
+    $('body').on("mousewheel", function (event) {
+        // remove default behavior
+        event.preventDefault(); 
+
+        //scroll without smoothing
+        var wheelDelta = event.wheelDelta;
+        var currentScrollPosition = window.pageYOffset;
+        window.scrollTo(0, currentScrollPosition - wheelDelta);
+    });
+}    
+
 // Znany Lekarz - Widget
 !function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//www.docplanner-platform.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");
 

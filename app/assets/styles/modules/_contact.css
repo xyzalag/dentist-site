@@ -11,19 +11,32 @@
 	}
 
  	&__info-container {
- 		display: block;
- 		margin: 0 auto;
+ 		width: 100%;
  		text-align: center;
  		background-color: rgba($darkGreen, .7);
  		padding: 10px;
  		font-weight: 300;
  		font-family: $fontHeading;
  		color: #FFF;
+
+ 		@mixin atMedium {
+ 			display: block;
+ 			margin: 0 auto;
+ 		}
+
+ 		&--modal{
+ 			@mixin centerer; 
+ 		}
  	}
 
  	&__social {
  		display: block;
  		margin: 0 auto;
+
+ 		&--modal {
+ 			position: relative;
+ 			height: 500px;
+ 		}
  	}
 
  	&__btn-social {
