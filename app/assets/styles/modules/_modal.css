@@ -10,7 +10,6 @@
   visibility: hidden;
   transform: scale(1.2);
   transition: all .3s ease-out;
-  overflow-x: scroll;
 
   &--is-visible {
     opacity: 1;

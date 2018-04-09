@@ -1495,7 +1495,6 @@ a:hover{
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   transition: all .3s ease-out;
-  overflow-x: scroll;
 
 
 
