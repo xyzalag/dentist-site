@@ -8,18 +8,24 @@
     background-size: cover;
 
     &--hero {
+      background-color: #FFF;
       height: 100vh;
-    	background-image: url('../../assets/images/bg-light-dots.jpg');
-
+      @mixin atMedium {
+        background-image: url('../../assets/images/bg-light-dots.jpg');
+      }
     }
 
     &--recommendations {
+      background-color: #FFF;
       height: auto;
-      background-image: url('../../assets/images/recommendations-bg-dots-white.jpg');
+      @mixin atMedium {
+        background-image: url('../../assets/images/recommendations-bg-dots-white.jpg');
+      }
     }
 
     &--clinic {
       height: auto;
+      width: 100%;
       background-image: url('../../assets/images/clinic-bg.jpg');
     }
 }

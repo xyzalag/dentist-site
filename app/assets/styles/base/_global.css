@@ -33,3 +33,12 @@ a:hover{
 .container {
 	position: relative;
 }
+
+.hide {
+  display: none;
+}
+
+address {
+  font-style: normal;
+  font-size: 1.5em;
+}

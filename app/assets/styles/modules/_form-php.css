@@ -1,0 +1,18 @@
+.form-php {
+
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-color: $darkGreen;
+
+	h1 {
+		font-family: $fontHeading;
+		font-size: 40px;
+		text-align: center;
+		@mixin centerer; 
+		color: #FFF;
+		border: 5px solid #FFF;
+		padding: 30px;
+		letter-spacing: 5px;
+	}
+}
