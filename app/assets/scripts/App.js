@@ -80,6 +80,19 @@ jQuery(function ($) {
     });
 }());
 
+
+   (function () {
+    $(document).ready(function() {
+      $(".read-more").click(function() {
+        $(".read-more-text").show();
+      });
+      $(".read-less").click(function() {
+        $(".read-more-text").hide();
+      }); 
+    });
+}());
+
+
 (function () {
         if ($('#googleMap').length > 0) {
 

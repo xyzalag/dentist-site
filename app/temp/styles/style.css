@@ -1436,6 +1436,7 @@ address {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   transition: all .3s ease-out;
+  overflow-y: scroll;
 
 
 
@@ -1918,6 +1919,18 @@ address {
       min-height: 200px;
     }
 
+.form__checkbox__text {
+    font-size: 12px;
+    background-color: transparent;
+  }
+
+.form__checkbox {
+    margin-right: 5px;
+    display: inline;
+    -webkit-transform: scale(1.1) !important;
+            transform: scale(1.1) !important;
+  }
+
 .form__button {
     display: block;
     margin: auto;
@@ -1949,6 +1962,20 @@ address {
     }
 
 label{
+  display: none;
+}
+
+.read-more:hover{
+  cursor: pointer;
+  color: #852538;
+}
+
+.read-less:hover{
+  cursor: pointer;
+  color: #852538;
+}
+
+.read-more-text {
   display: none;
 }
 
