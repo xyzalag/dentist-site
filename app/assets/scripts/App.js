@@ -28,9 +28,50 @@ if(navigator.userAgent.match(/Trident\/7\./)) { // if IE
 // Znany Lekarz - Widget
 !function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//www.docplanner-platform.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");
 
+
+
+// Automatically load reviews from Google location account and append them to owl recommendation carousel
+$(document).ready(function(){
+//fetch reviews from Google API in JSON
+var googleAPI="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJDUhcRqKVFkcRBFG3CKyWqrM&fields=review&key=AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk";
+$.getJSON(googleAPI, function(data){
+  var reviewsArray = data["result"]["reviews"];
+  var i; 
+    for (i in reviewsArray) {
+      //for each review extract text and author's name
+      var review = reviewsArray[i];
+      var reviewText = review.text;
+      var reviewAuthor = review.author_name;
+
+      if (reviewText !== "") {
+        //create a new div for a new quote 
+        var reviewsCarousel = document.querySelector(".recommendation-carousel");
+        var reviewsContainer = document.createElement("div");
+        $(reviewsContainer).addClass("recommendation-carousel__item");
+        var reviewsHeading = document.createElement("h2");
+        $(reviewsHeading).addClass("recommendation-carousel__quote");
+        var reviewsHeadingText = document.createTextNode("“"+ reviewText + "”");
+        reviewsHeading.appendChild(reviewsHeadingText);
+        reviewsContainer.appendChild(reviewsHeading);
+
+        //create source span with author's name
+        var reviewsSmall = document.createElement("small");
+        $(reviewsSmall).addClass("recommendation-carousel__source");
+        var reviewsSmallText = document.createTextNode(reviewAuthor);
+        reviewsSmall.appendChild(reviewsSmallText);
+        reviewsContainer.appendChild(reviewsSmall);
+
+        reviewsCarousel.appendChild(reviewsContainer);
+    };
+  };
+});
+});
+
+
 jQuery(function ($) {
 
   'use strict';
+
    (function () {
       $(document).ready(function(){
         $('.recommendation-carousel').owlCarousel({
@@ -47,23 +88,6 @@ jQuery(function ($) {
         })
     });
 }());
-
-  (function () {
-      $(document).ready(function(){
-        $('.clinic__carousel').owlCarousel({
-            items: 1,
-            loop:true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            smartSpeed: 500,
-            autoplayHoverPause:true,
-            margin:10,
-            touchDrag: true,
-        })
-    });
-}());
-
-
 
    (function () {
       $(document).ready(function() {

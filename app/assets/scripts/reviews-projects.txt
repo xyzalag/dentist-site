@@ -1,0 +1,171 @@
+DISPLAY GOOGLE REVIEWS ON THE WEBSITE
+1. fetch data from Google API
+ --register key
+ Place ID ChIJDUhcRqKVFkcRBFG3CKyWqrM
+ API key AIzaSyBkUA6o-vrskl0ZgNbTSJP2Ls1fpP8saTo
+
+ google map API key AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk
+
+ https://maps.googleapis.com/maps/api/place/details/json?placeid={ChIJDUhcRqKVFkcRBFG3CKyWq}&key={AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk}
+
+
+
+  https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJDUhcRqKVFkcRBFG3CKyWqrM&fields=review&key=AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk
+
+
+
+const {OAuth2Client} = require('google-auth-library');
+const client = new OAuth2Client('rg-reviews-1529741362558');
+async function verify() {
+  const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: 'rg-reviews-1529741362558',  // Specify the CLIENT_ID of the app that accesses the backend
+      // Or, if multiple clients access the backend:
+      //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+  });
+  const payload = ticket.getPayload();
+  const userid = payload['sub'];
+  // If request specified a G Suite domain:
+  //const domain = payload['hd'];
+}
+verify().catch(console.error);
+
+$(document).ready(function(){
+var lat;
+var long;
+  
+  var miles =5;
+  var meters=miles*1609.344;
+  var getFoodType="restaurant";
+  //gets the geo location
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    long=position.coords.longitude;
+    lat=position.coords.latitude;
+       
+    /* 
+    $("#15").on("click",function(){
+  miles=$("#15").html();  
+   meters=miles*1609.344; 
+  });
+    
+     $("#20").on("click",function(){
+  miles=$("#20").html();  
+   meters=miles*1609.344;
+     });
+    
+     $("#30").on("click",function(){
+  miles=$("#30").html();  
+   meters=miles*1609.344;
+     });
+    console.log(miles);
+    console.log(meters);
+    */
+ 
+   $("#delivery").on("click",function(){
+  getFoodType=$('input[name=food]').is(":checked");
+     getFoodType=$("#delivery").val();     
+      console.log(getFoodType);
+    });
+    /*
+    $("#restaurant").on("click",function(){
+     getFoodType=$("#restaurant").val();
+     console.log(getFoodType);
+   });
+   */
+    
+// this is the api to get the data
+   var googleAPI="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+long+"&radius="+meters+"&type="+getFoodType+"&key=AIzaSyBZep9kuZEHa7u6bC8AVokt3BWqW_LZB_4";
+     
+$.getJSON(googleAPI,function(data){  
+  console.log(data.results[0].name);
+  //this function allows for me to see how many var there are in the API and then to randomly chose one
+  function getFood(){
+      var num=[]; 
+    
+  var total = data.results.length; //this var gets how many vars there are in the api
+    
+ //below for loop puts the total into an array and counts 0-how ever many vars there are
+    for(var i=0;i<total;i++){
+    num.push(i);
+    }
+ num=Math.floor((Math.random()*num.length))
+  console.log(data.results[num].name);
+  
+    $("#foodChoice").html(data.results[num].name);
+    $("#address").html(data.results[num].vicinity);
+  }
+    
+    $("#randButton").on("click",function(){
+  getFood();
+                        });
+   
+});
+   });
+}
+  });
+ 
+
+ // $(document).ready(function(){
+
+// //fetch json reviews from google API
+// var googleAPI="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJDUhcRqKVFkcRBFG3CKyWqrM&fields=review&key=AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk";
+// $.getJSON(googleAPI, function(data){
+//   var reviewsArray = data["result"]["reviews"];
+//   var firstReview = reviewsArray[0];
+//   var firstText = firstReview.text;
+//   console.log(firstText);
+
+//   var reviewsCarousel = document.querySelector(".recommendation-carousel");
+//   var reviewsContainer = document.createElement("div");
+//   $(reviewsContainer).addClass("recommendation-carousel__item");
+//   console.log(reviewsContainer);
+//   $(reviewsCarousel).append(reviewsContainer);
+
+//   var reviewsHeading = document.createElement("h2");
+//   $(reviewsHeading).addClass("recommendation-carousel__quote");
+//   $(reviewsContainer).append(reviewsHeading);
+//   var reviewsHeadingText = document.createTextNode(firstText);
+//   $(reviewsHeading).append(reviewsHeadingText);
+
+  
+// });
+// });
+
+
+$(document).ready(function(){
+//fetch reviews from Google API in JSON
+var googleAPI="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJDUhcRqKVFkcRBFG3CKyWqrM&fields=review&key=AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk";
+$.getJSON(googleAPI, function(data){
+  var reviewsArray = data["result"]["reviews"];
+  var i; 
+    for (i in reviewsArray) {
+      //for each review extract text and author's name
+      var review = reviewsArray[i];
+      var reviewText = review.text;
+      var reviewAuthor = review.author_name;
+
+      if (reviewText !== "") {
+        //create a new div for a new quote 
+        var reviewsCarousel = document.querySelector(".recommendation-carousel");
+        var reviewsContainer = document.createElement("div");
+        $(reviewsContainer).addClass("recommendation-carousel__item");
+        $(reviewsCarousel).appendChild(reviewsContainer);
+        var reviewsHeading = document.createElement("h2");
+        $(reviewsHeading).addClass("recommendation-carousel__quote");
+        $(reviewsContainer).appendChild(reviewsHeading);
+        var reviewsHeadingText = document.createTextNode("“"+ reviewText + "”");
+        $(reviewsHeading).appendChild(reviewsHeadingText);
+
+        //create source span with author's name
+        var reviewsSmall = document.createElement("small");
+        $(reviewsSmall).addClass("recommendation-carousel__source");
+        $(reviewsContainer).appendChild(reviewsSmall);
+        var reviewsSmallText = document.createTextNode(reviewAuthor);
+        $(reviewsSmall).appendChild(reviewsSmallText);
+
+        
+    };
+  };
+});
+});

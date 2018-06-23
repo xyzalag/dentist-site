@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/xyzalag/dentist-site#readme",
   "dependencies": {
+    "google-auth-library": "^1.6.1",
     "jquery": "^3.3.1",
     "jquery-smooth-scroll": "^2.2.0",
     "lazysizes": "^4.0.2",
