@@ -5,6 +5,7 @@ import $ from 'jquery';
 import StickyHeader from './modules/StickyHeader';
 import Modal from './modules/Modal';
 
+
 var mobileMenu = new MobileMenu();
 new RevealOnScroll($(".feature-item"), "85%");
 new RevealOnScroll($(".testimonial"), "60%");
@@ -12,74 +13,59 @@ var stickyHeader = new StickyHeader();
 var modal = new Modal();
 
 
-
-
 //IE FIX FOR SHAKY BACKGROUND - PARALLAX
+
 if(navigator.userAgent.match(/Trident\/7\./)) { // if IE
-    $('body').on("mousewheel", function (event) {
-        // remove default behavior
-        event.preventDefault(); 
+        $('body').on("mousewheel", function () {
+            // remove default behavior
+            event.preventDefault(); 
 
-        //scroll without smoothing
-        var wheelDelta = event.wheelDelta;
-        var currentScrollPosition = window.pageYOffset;
-        window.scrollTo(0, currentScrollPosition - wheelDelta);
-    });
-}    
+            //scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+};  
 
-// Znany Lekarz - Widget
+// ZNANY LEKARZ - WIDGET
 !function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//www.docplanner-platform.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");
-
 
 
 jQuery(function ($) {
 
   'use strict';
-//      (function () {
-//       $(document).ready(function() {
- 
-//    });
-// }());
 
+
+  //PRICING TABLE TOGGLE
+  (function () {
+
+      var allPanels = $('.pricing__section').hide();
+      var firstPanel = $('.open').show();
+    
+      $('.pricing__title').click(function() {
+            var $this = $(this);
+            var $icon = $this.find('.pricing__icon');
+
+            if ($icon.hasClass('fa-angle-double-down')) {
+              $icon.removeClass('fa-angle-double-down');
+              $icon.addClass('fa-angle-double-up');
+
+            } else {
+              $icon.removeClass('fa-angle-double-up');
+              $icon.addClass('fa-angle-double-down');
+            };
+
+            //$target =  $this.parent().next();
+            var $target =  $this.next();
+            console.log($target);
+            $target.slideToggle();
+    });
+  }());
+
+// INITIALIZE OWL REVIEWS CAROUSEL
    (function () {
       $(document).ready(function(){
-      // Automatically load reviews from Google location account and append them to owl recommendation carousel
-//fetch reviews from Google API in JSON
-var googleAPI="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJDUhcRqKVFkcRBFG3CKyWqrM&fields=review&key=AIzaSyCMPw99oS6ha9M4ufOSp0tcA450Qd7sbNk";
-$.getJSON(googleAPI, function(data){
-  var reviewsArray = data["result"]["reviews"];
-  var i; 
-    for (i in reviewsArray) {
-      //for each review extract text and author's name
-      var review = reviewsArray[i];
-      var reviewText = review.text;
-      var reviewAuthor = review.author_name;
-      var count = i; 
-
-      if (reviewText !== "") {
-        //create a new div for a new quote 
-        var reviewsCarousel = document.querySelector(".recommendation-carousel");
-        var reviewsItem = document.createElement("div");
-        $(reviewsItem).addClass("recommendation-carousel__item");
-        var reviewsHeading = document.createElement("h2");
-        $(reviewsHeading).addClass("recommendation-carousel__quote");
-        var reviewsHeadingText = document.createTextNode("“"+ reviewText + "”");
-        reviewsHeading.appendChild(reviewsHeadingText);
-        reviewsItem.appendChild(reviewsHeading);
-
-        //create source span with author's name
-        var reviewsSmall = document.createElement("small");
-        $(reviewsSmall).addClass("recommendation-carousel__source");
-        var reviewsSmallText = document.createTextNode(reviewAuthor);
-        reviewsSmall.appendChild(reviewsSmallText);
-        reviewsItem.appendChild(reviewsSmall);
-
-        reviewsCarousel.appendChild(reviewsItem);
-        count ++; 
-    };
-  };
-        if (count >=4) {
-                    $('.recommendation-carousel').owlCarousel({
+          $('.recommendation-carousel').owlCarousel({
             nav: true,
             navText: ["◀","▶"],
             items: 1,
@@ -90,12 +76,11 @@ $.getJSON(googleAPI, function(data){
             autoplayHoverPause:true,
             margin:10,
             touchDrag: true,
-        });
-                  };
-    });
-});
+     });
+   });
 }());
 
+//READ MORE ABOUT SECTION
    (function () {
       $(document).ready(function() {
         $("#read-more-button").click(function() {
@@ -111,7 +96,7 @@ $.getJSON(googleAPI, function(data){
     });
 }());
 
-
+// READ MORE - CONTACT FORM CONSENT
    (function () {
     $(document).ready(function() {
       $(".read-more").click(function() {
@@ -123,7 +108,7 @@ $.getJSON(googleAPI, function(data){
     });
 }());
 
-
+//GOOGLE MAP
 (function () {
         if ($('#googleMap').length > 0) {
 

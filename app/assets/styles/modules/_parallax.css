@@ -28,4 +28,12 @@
       width: 100%;
       background-image: url('../../assets/images/clinic-bg.jpg');
     }
+
+    &--subpage {
+      height: auto;
+      width: 100%;
+      background-image: url('../../assets/images/subpage-hero.jpg');
+      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
 }

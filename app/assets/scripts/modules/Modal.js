@@ -8,8 +8,6 @@ class Modal {
     this.events();
   }
 
-  
-
   events() {
     //clicking the open modal button
     this.openModalButton.click(this.openModal.bind(this)); //by bind() method 'this' stays to what its pointed towards by the next action, an is not binded to open modal button. we have control over what browser interpret as 'this'

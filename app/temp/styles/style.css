@@ -394,6 +394,7 @@ address {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .parallax--hero {
@@ -424,6 +425,13 @@ address {
       height: auto;
       width: 100%;
       background-image: url('../../assets/images/clinic-bg.jpg');
+    }
+
+.parallax--subpage {
+      height: auto;
+      width: 100%;
+      background-image: url('../../assets/images/subpage-hero.jpg');
+      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
 
 .about__container {
@@ -1222,6 +1230,15 @@ address {
       }
   }
 
+.site-header__subpage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 20px 20px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
 .site-header__logo__graphic {
     text-indent: -9999px;
   }
@@ -1386,7 +1403,7 @@ address {
 
 .primary-nav a {
     color: #FFF;
-    font-weight: 300;
+    font-weight: 500;
     text-decoration: none;
     display: block;
     padding: 5px 8px;
@@ -2026,3 +2043,149 @@ label{
 		padding: 30px;
 		letter-spacing: 5px;
 	}
+
+.subpage {
+
+	margin-bottom: 100px;
+}
+
+.subpage__content {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		padding-top: 150px;
+		padding-bottom: 150px;
+		flex-direction: column;
+	}
+
+.subpage__title {
+	    text-align: center;
+	    font-weight: 100;
+	    color: #124239;
+	    font-size: 2rem;
+	    font-family: 'Poiret One', cursive;
+	    font-weight: 500;
+	    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+
+@media (min-width: 800px) {
+
+.subpage__title {
+	    	font-size: 3rem
+	}
+  }
+
+.subpage__subtitle {
+		margin-top: 20px;
+		margin-bottom: 0;
+	    text-align: center;
+	    font-weight: 300;
+	    color: #124239;
+	    font-size: 2.4rem;
+	    font-family: 'Poiret One', cursive;
+	    font-weight: 500;
+	    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+	}
+
+@media (min-width: 530px) {
+
+.subpage__subtitle {
+	      font-size: 4.8rem
+	}
+  }
+
+.pricing__title {
+			text-align: center;
+			font-family: 'Poiret One', cursive;
+			font-size: 1.7rem;
+			letter-spacing: 1px;
+			padding-bottom: 15px;
+			padding-top: 15px;
+			background-color: #28A49A;
+			display: block;
+			margin: 40px auto;
+			width: 90%;
+			color: white;
+			cursor: pointer;
+			transition: .25s all ease-in-out;
+			box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+		}
+
+@media (min-width: 800px) {
+
+.pricing__title {
+				font-size: 1.9em;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				width: 60%
+
+		}
+  }
+
+.pricing__title:hover {
+				width: 50%;
+				background-color: #28A49A;
+				color: #852538;
+			}
+
+.pricing__section:last-of-type {
+		margin-bottom: 100px;
+	}
+
+.pricing__icon {
+		display: block;
+		font-size: 1.2rem;
+		padding-top: 10px;
+	}
+
+.pricing table {
+		width: 90%;
+		margin: 0 auto;
+		border-collapse: collapse;
+		box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		font-size: .9rem;
+
+	}
+
+@media (min-width: 800px) {
+
+.pricing table {
+			width: 60%
+
+	}
+  }
+
+@media (min-width: 1010px) {
+
+.pricing table {
+			font-size: 1rem
+
+	}
+  }
+
+.pricing table tr td {
+				padding: 10px 20px;
+				//border-bottom: 1px solid #28A49A;
+			}
+
+@media (min-width: 800px) {
+
+.pricing table tr td {
+					padding: 15px 20px
+			}
+  }
+
+.pricing table tr td:first-child {
+				text-align: left;
+			}
+
+.pricing table tr td:last-child {
+				text-align: right;
+			}
+
+.pricing table tr:nth-child(even) {
+			background-color: rgba(192,218,200, .2);
+		}

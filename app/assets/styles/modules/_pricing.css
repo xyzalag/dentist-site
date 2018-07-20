@@ -1,0 +1,87 @@
+.pricing {
+
+		&__title {
+			text-align: center;
+			font-family: $fontHeading;
+			font-size: 1.7rem;
+			letter-spacing: 1px;
+			padding-bottom: 15px;
+			padding-top: 15px;
+			background-color: $blueGreen;
+			display: block;
+			margin: 40px auto;
+			width: 90%;
+			color: white;
+			cursor: pointer;
+			transition: .25s all ease-in-out;
+			box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+			@mixin atMedium {
+				font-size: 1.9em;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				width: 60%;
+			}
+
+			&:hover {
+				width: 50%;
+				background-color: $blueGreen;
+				color: $mainBurgundy;
+			}
+
+		}
+
+
+	&__section:last-of-type {
+		margin-bottom: 100px;
+	}
+
+
+	&__icon {
+		display: block;
+		font-size: 1.2rem;
+		padding-top: 10px;
+	}
+
+	table {
+		width: 90%;
+		margin: 0 auto;
+		border-collapse: collapse;
+		box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		font-size: .9rem;
+
+		@mixin atMedium {
+			width: 60%;
+		}
+
+		@mixin atLarge{
+			font-size: 1rem;
+		}
+
+		tr {
+
+			td {
+				padding: 10px 20px;
+				//border-bottom: 1px solid $blueGreen;
+
+				@mixin atMedium {
+					padding: 15px 20px;
+				}
+			}
+
+			td:first-child {
+				text-align: left;
+			}
+
+			td:last-child {
+				text-align: right;
+			}
+		}	
+
+		tr:nth-child(even) {
+			background-color: rgba($lightGreen, .2);
+		}
+
+	}
+}
+
