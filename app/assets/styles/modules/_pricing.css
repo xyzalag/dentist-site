@@ -24,9 +24,13 @@
 			}
 
 			&:hover {
-				width: 50%;
 				background-color: $blueGreen;
 				color: $mainBurgundy;
+
+				@mixin atMedium {
+					width: 50%;
+				}
+	
 			}
 
 		}

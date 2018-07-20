@@ -2126,10 +2126,18 @@ label{
   }
 
 .pricing__title:hover {
-				width: 50%;
 				background-color: #28A49A;
 				color: #852538;
+	
 			}
+
+@media (min-width: 800px) {
+
+.pricing__title:hover {
+					width: 50%
+	
+			}
+  }
 
 .pricing__section:last-of-type {
 		margin-bottom: 100px;
