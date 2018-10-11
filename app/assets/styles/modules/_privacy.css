@@ -1,0 +1,32 @@
+.privacy {
+
+	h2 {
+		text-align: center;
+		font-family: $fontHeading;
+		font-size: 2rem;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		letter-spacing: 2px;
+	}
+
+	p {
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+
+	ol {
+		box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		padding: 20px;
+
+		@mixin atMedium {
+			margin: 10px 100px;
+		}
+
+		li {
+			margin-bottom: 10px;
+			margin-left: 20px;
+			line-height: 1.3;
+		}
+	}
+}
